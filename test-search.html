@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Bus Search</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Test Bus Search API</h1>
+    <button onclick="testSearch()">Test Bangalore to Mysore Search</button>
+    <div id="result"></div>
+
+    <script>
+        async function testSearch() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>Testing search...</p>';
+            
+            try {
+                const response = await axios.get('http://localhost:5000/api/schedules/search/route-date', {
+                    params: { 
+                        source: 'Bangalore', 
+                        destination: 'Mysore', 
+                        date: new Date().toISOString().split('T')[0]
+                    }
+                });
+                
+                resultDiv.innerHTML = `
+                    <h3>Success! Found ${response.data.length} buses</h3>
+                    <pre>${JSON.stringify(response.data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h3>Error: ${error.message}</h3>
+                    <p>Backend might not be running or database not connected</p>
+                    <pre>${error.stack}</pre>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

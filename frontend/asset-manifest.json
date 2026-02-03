@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Ksrtc-Live-Bus-Tracking-/static/css/main.f7b9ad71.css",
+    "main.js": "/Ksrtc-Live-Bus-Tracking-/static/js/main.a8c83fb1.js",
+    "index.html": "/Ksrtc-Live-Bus-Tracking-/index.html",
+    "main.f7b9ad71.css.map": "/Ksrtc-Live-Bus-Tracking-/static/css/main.f7b9ad71.css.map",
+    "main.a8c83fb1.js.map": "/Ksrtc-Live-Bus-Tracking-/static/js/main.a8c83fb1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7b9ad71.css",
+    "static/js/main.a8c83fb1.js"
+  ]
+}
